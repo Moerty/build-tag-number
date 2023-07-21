@@ -16,7 +16,7 @@ function request(method, path, data, callback) {
             data = JSON.stringify(data);
         }  
         const options = {
-            hostname: '${env.GITHUB_API_URL}',
+            hostname: `${env.GITHUB_API_URL}`,
             port: 443,
             path,
             method,
@@ -76,7 +76,7 @@ function main() {
     }
     
     //Some sanity checking:
-    for (let varName of ['INPUT_TOKEN', 'GITHUB_REPOSITORY', 'GITHUB_SHA']) {
+    for (let varName of ['INPUT_TOKEN', 'GITHUB_REPOSITORY', 'GITHUB_SHA', 'GITHUB_API_URL']) {
         if (!env[varName]) {
             fail(`ERROR: Environment variable ${varName} is not defined.`);
         }
