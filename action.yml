@@ -11,6 +11,9 @@ inputs:
   prefix:
     description: 'Prefix for the build-number-<num> tag to make it unique if tracking multiple build numbers'
     required: false
+  api_url:
+    description: 'custom api url'
+    required: true
 
 outputs:
   build_number:
